@@ -8,12 +8,3 @@ export interface Product {
   cartItemCount?:number;
 }
 
-export interface CartItem {
-  product: Product;
-  quantity: number;
-  totalTTC: number;
-  taxRate: number ;
-  totalTaxes: number;
-  prixUnitaireTTC: number;
-  taxeUnitaire: number;
-}

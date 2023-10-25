@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {CartItem} from "../models/Product";
+import {CartItem} from "../models/CartItem";
 
 @Injectable({
   providedIn: 'root'
@@ -32,15 +32,6 @@ export class TaxService {
     const priceTTC = cardItem.product.price + taxes;
     return Math.ceil(priceTTC * 20) / 20;
   }
-  calculateTotalTTC(cardItems: CartItem[]): number {
 
-    let totalPriceTTC = 0;
-    cardItems.forEach(cartItem => {
-
-      totalPriceTTC += cartItem.prixUnitaireTTC *cartItem.quantity;
-
-    });
-    return Math.ceil(totalPriceTTC * 20) / 20;
-  }
 
 }

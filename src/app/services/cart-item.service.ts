@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {CartItem, Product} from "../models/Product";
+import {Product} from "../models/Product";
 import {BehaviorSubject, Observable} from "rxjs";
 import {TaxService} from "./tax.service";
+import {CartItem} from "../models/CartItem";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,6 @@ export class CartItemService {
 
   private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.cartItems);
   cartTotal: number = 0;
-  cartTotalTax: number = 0;
   constructor(private taxService: TaxService) {}
 
   get cartItems$(): Observable<CartItem[]> {
