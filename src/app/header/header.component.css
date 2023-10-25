@@ -1,0 +1,31 @@
+/* header.component.css */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.cart-count {
+  font-size: 18px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

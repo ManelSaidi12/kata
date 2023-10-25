@@ -1,0 +1,43 @@
+<div *ngIf="panierVide; else panierNonVide">
+  <p>Panier vide</p>
+</div>
+<ng-template #panierNonVide>
+
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Product</th>
+    <th>Quantity</th>
+    <th>Taxe</th>
+    <th>Price (HT)</th>
+    <th>Total (TTC)</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let cartItem of cartItems">
+    <td>{{ cartItem.product.productName }}</td>
+    <td>{{ cartItem.quantity }}</td>
+    <td>{{ cartItem.totalTaxes }}€</td>
+    <td>{{ cartItem.product.price }}€</td>
+    <td>{{ cartItem.prixUnitaireTTC }}€</td>
+    <td>
+      <button class="delete-button" (click)="removeFromCart(cartItem)">
+        <i class="delete-icon fa fa-trash"></i> Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="totals">
+  <div class="total">
+    <span>TOTAL Taxes :</span>
+    <span>{{ cartTotalTaxes }}</span>
+  </div>
+  <div class="total">
+    <span>TOTAL TTC  :</span>
+    <span>{{ cartTotalTTC }}</span>
+  </div>
+</div>
+</ng-template>

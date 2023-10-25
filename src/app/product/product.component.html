@@ -1,0 +1,25 @@
+<div class="product-container">
+
+  <h1>Liste des articles</h1>
+  <div class="filter">
+    <label for="category">Filtrer par catégorie :</label>
+    <select id="category" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+    </select>
+  </div>
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <h2>{{product.productName}}</h2>
+      <p>Catégorie : {{product.category}}</p>
+      <p>Quantité : {{product.quantity}}</p>
+      <p>Prix unitaire TTC : {{product.price}}€</p>
+      <p>Quantité ajoutée au panier: {{product.cartItemCount }}</p>
+
+      <p *ngIf="product.quantity === 0">Non disponible</p>
+      <button (click)="addToCart(product)" [disabled]="product.quantity === 0">
+        Ajouter au panier</button>
+
+    </div>
+  </div>
+</div>

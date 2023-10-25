@@ -1,0 +1,57 @@
+/* Style the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+/* Style the table headers */
+.table th {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style the table rows */
+.table tr {
+  border: 1px solid #ddd;
+}
+
+/* Style the alternating row background color */
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style the table cells */
+.table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+
+.delete-button {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* Animation au survol */
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.delete-icon {
+  font-size: 18px; /* Taille de l'icône */
+  margin-right: 5px; /* Espacement à droite de l'icône */
+}
+
+/* Réduire la taille de l'icône au survol (facultatif) */
+.delete-button:hover .delete-icon {
+  font-size: 16px;
+}
